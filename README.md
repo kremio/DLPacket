@@ -38,5 +38,8 @@ n + 1 | The checksum: XOR sum of the byte 0 to n
  }
  ```
  
-Created by Jonathan Cremieux<kremio.software@gmail.com> for Design Research Lab<drlab.org> on 12/06/2017.
+ ## Tests
+ https://github.com/kremio/DLPacket/tree/test
+ 
+Created by Jonathan Cremieux <kremio.software@gmail.com> for Design Research Lab http://drlab.org on 12/06/2017.
 BSD license, all text above must be included in any redistribution
