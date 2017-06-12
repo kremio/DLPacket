@@ -30,11 +30,11 @@ n + 1 | The checksum: XOR sum of the byte 0 to n
  }
 
  void loop(){
- 	dataPacket.addAnalogValue(128); //1 byte
- 	dataPacket.addAnalogValue(true); //1 bit
- 	dataPacket.addAnalogValue(1024); //2 bytes
-	dataPacket.addAnalogValue(false); //1 bit
-	dataPacket.send(); //send the packet
+   dataPacket.addAnalogValue(128); //1 byte
+   dataPacket.addAnalogValue(true); //1 bit
+   dataPacket.addAnalogValue(1024); //2 bytes
+   dataPacket.addAnalogValue(false); //1 bit
+   dataPacket.send(); //send the packet
  }
  ```
  
