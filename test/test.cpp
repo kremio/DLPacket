@@ -54,7 +54,7 @@ const lest::test specification[] =
 	EXPECT( stream.getBuffer()[3] == true );
   },
 
-  CASE( "Can take int data" ){
+  CASE( "Can take 1 byte int data" ){
 	Stream stream;
 	DLPacket dlpacket(stream);
 	EXPECT( dlpacket.addAnalogValue(128) );
@@ -62,6 +62,17 @@ const lest::test specification[] =
 	EXPECT( MIN_PACKET_SIZE == stream.getBufferSize() );
 	EXPECT( stream.getBuffer()[3] == 128 );
   },
+
+
+  CASE( "Can take 2 bytes int data" ){
+	Stream stream;
+	DLPacket dlpacket(stream);
+	EXPECT( dlpacket.addAnalogValue(256) );
+	EXPECT( dlpacket.send() );
+	EXPECT( MIN_PACKET_SIZE = 1 == stream.getBufferSize() );
+	EXPECT( stream.getBuffer()[3] | (stream.getBuffer()[4] << 8) == 256 );
+  },
+
 
   CASE( "Can take a mix of boolean and int data" ){
 	Stream stream;
