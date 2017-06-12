@@ -1,5 +1,5 @@
 /*
-An Arduino library to transmit analog and digital values in a single packet of data through the serial port.
+ An Arduino library to transmit analog and digital values in a single packet of data through the serial port.
  Created by Jonathan Cremieux<kremio.software@gmail.com> for Design Research Lab<drlab.org> on 06/06/2017.
  */
 
@@ -8,7 +8,7 @@ An Arduino library to transmit analog and digital values in a single packet of d
 #include "DLPacket.h"
 
 boolean DLPacket::packetFull(){
-  return _analogIndex + _digitalIndex == 16;
+  return _analogIndex == 15 || (_analogIndex + _digitalIndex) == 16;
 }
 
 boolean DLPacket::addAnalogValue(int aValue){

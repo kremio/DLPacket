@@ -9,8 +9,22 @@
 
 class Stream {
 	public:
-		Stream(){}
-		int write(const uint8_t *buffer, int size){return size;}
-		int write(uint8_t byte){return 1;}
+		Stream(){ _bufferPtr = _buffer;}
+		size_t  write(const uint8_t *buffer, size_t  size){
+			std::memcpy(_bufferPtr, buffer, size);
+			_bufferPtr = _bufferPtr + size;
+			return size;
+		}
+		size_t write(uint8_t byte){
+			*(_bufferPtr) = byte;
+			_bufferPtr = _bufferPtr + 1;
+			return 1;
+		}
+		uint8_t * getBuffer(){return _buffer;}
+		size_t getBufferSize(){return _bufferPtr - _buffer;}
+		void reset(){ _bufferPtr = _buffer;}
+	private:
+		uint8_t *_bufferPtr;
+		uint8_t _buffer[2+1+16];
 };
 #endif
