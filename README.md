@@ -1,6 +1,6 @@
 # DLPacket
 An Arduino library to transmit analog and digital values agglomerated in a single packet of data through a given Stream.
-In the context if this library 'analog' values refer to unsigned integers between 0 and 65535 and 'digital' values are boolean as defined in Arduino.h.
+In the context if this library 'analog' values refer to unsigned integers between 0 and 65535 and 'digital' values are boolean as defined in [Arduino.h](https://github.com/arduino/Arduino/blob/master/hardware/arduino/avr/cores/arduino/Arduino.h).
 
 ## Features:
 * The packet ends with a parity check sum that can be used to ensure the integrity of the data and detect the end of the packet.
