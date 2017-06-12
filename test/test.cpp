@@ -69,8 +69,8 @@ const lest::test specification[] =
 	DLPacket dlpacket(stream);
 	EXPECT( dlpacket.addAnalogValue(256) );
 	EXPECT( dlpacket.send() );
-	EXPECT( MIN_PACKET_SIZE = 1 == stream.getBufferSize() );
-	EXPECT( stream.getBuffer()[3] | (stream.getBuffer()[4] << 8) == 256 );
+	EXPECT( MIN_PACKET_SIZE + 1 == stream.getBufferSize() );
+	EXPECT( (stream.getBuffer()[3] | (stream.getBuffer()[4] << 8)) == 256 );
   },
 
 
