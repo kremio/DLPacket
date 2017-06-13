@@ -7,8 +7,7 @@ In the context if this library 'analog' values refer to unsigned integers betwee
 * The packet must contain at least 1 value before it can be sent.
 * A maximum of 15 analog values and a maximum of 16 digital values are allowed.
 * Analog and digital values can be combined into a maximum of 16 values in total.
-* Analog values greater than 255, which are encoded on 2 bytes, are split into two
-* 1 byte numbers and account for two analog values.
+* Analog values greater than 255, which are encoded on 2 bytes, are split into two 1 byte numbers and account for two analog values.
 
 ## The packet layout:
 byte position | Content in the packet
